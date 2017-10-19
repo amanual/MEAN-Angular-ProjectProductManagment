@@ -1,0 +1,31 @@
+<fieldset>
+    <h3>Create a New Product</h3>
+    <form (submit)='onSubmit()' #form = 'ngForm'>
+      <p><label>Title</label>
+      <input type="text"
+             name="title"
+             minlength="4"
+             [(ngModel)] = 'newtasks.title'
+             #title = 'ngModel'
+             required> &nbsp; <label class="require" *ngIf ='!title.valid'>Minimum of 4 characters is required for title</label></p>
+      <p><label>Price</label>
+      <input type="number"
+              name="price"
+              min="1"              
+              required
+              [(ngModel)] = 'newtasks.price'
+              #price = 'ngModel'
+              > &nbsp; <label class="require" *ngIf ='!price.valid'>Price is required</label></p>
+     <p><label>Image Url</label>
+      <input type="url" 
+              name="newurl"
+              [(ngModel)] = 'newtasks.newurl'></p>
+      <button  [disabled]='!form.valid' [ngStyle] = "{'background-color':'green'}">Create</button>  
+    </form>  
+</fieldset>
+
+
+
+
+
+

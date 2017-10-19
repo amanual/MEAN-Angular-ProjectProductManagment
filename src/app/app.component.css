@@ -1,0 +1,14 @@
+*{
+    display: inline-block;
+    text-decoration: none;
+}
+a {
+    border-right: 2px solid black;    
+    margin-left: 10px;    
+    width: 115px;
+    padding-right: 10px;
+    
+}
+.link{
+    border-right: 2px solid white;
+}

@@ -1,0 +1,22 @@
+<h3>Edit Product</h3>
+<form (submit) = 'onClick()' #form = 'ngForm'>
+  <p><label>Title</label>
+  <input type="text"
+         name="title"
+         minlength="4"
+         value="data.title"
+         [(ngModel)] = 'data.title'
+         #title = 'ngModel'> &nbsp; <label class="label" *ngIf ='!title.valid'>Minimum of 4 characters is required for title</label></p>
+  <p><label>Price</label>
+  <input type="number"
+          name="price"
+          min="1"
+          value='data.price'
+          [(ngModel)] = 'data.price'
+          #price = 'ngModel'
+          > &nbsp; <label class="label" *ngIf ='!price.valid'>Price is required</label></p>
+ <p><label>Image url</label>
+  <input type="url" name="newurl" [value]='data.newurl' [(ngModel)]='data.newurl'></p>
+  <button (click) = 'onClick(id)' [ngStyle] = "{'background-color':'skyblue'}">Update</button>
+  <button (click) = 'delete(task)' [ngStyle] = "{'background-color': 'red' }">Delete</button>    
+</form>

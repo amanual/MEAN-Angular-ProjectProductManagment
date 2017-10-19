@@ -1,0 +1,11 @@
+<fieldset>  
+  <h3>Products List</h3>   
+  <fieldset *ngFor= 'let task of tasks; let idx = index'>    
+      <img src={{task.newurl}} alt="iphone image">
+      <p>{{task.title}}</p>
+      <p>${{task.price}}</p>
+      <button [routerLink] = "['/products','edit',idx]" [ngStyle] = "{'background-color':'yellow'}">Edit</button>
+      <button (click) = 'delete(task)' [ngStyle] = "{'background-color': 'red'}">Delete</button>    
+  </fieldset>
+</fieldset>
+<router-outlet></router-outlet>
